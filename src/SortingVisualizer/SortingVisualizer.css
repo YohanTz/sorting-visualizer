@@ -1,5 +1,25 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.array-bar-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.main-container, .array-bar-container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container > div, .array-bar-container > div {
+    width: 100%;
+}
+
 .array-bar {
-    width: 8px;
     background-color: #FD346A;
     display: inline-block;
     margin: 0 1px;
