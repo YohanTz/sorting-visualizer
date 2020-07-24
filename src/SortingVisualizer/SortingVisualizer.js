@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as Algorithm from '../SortingAlgorithms/SortingAlgorithms';
 import './SortingVisualizer.css';
 
+var isRunning = false;
 
 const SortingVisualizer = () => {
     const [array, setArray] = useState(randomArray());
@@ -10,7 +11,7 @@ const SortingVisualizer = () => {
         <div>
             <header className="header">
                 <h1>Sorting Visualizer</h1>
-                <div onClick={() => setArray(randomArray())}>
+                <div onClick={() => setArray(randomArray(array))}>
                     <h3>Generate new array</h3>
                 </div>
                 <div onClick={() => bubbleSort(array, setArray)}>
@@ -33,7 +34,11 @@ const SortingVisualizer = () => {
 
 
 const bubbleSort = (array, setArray) => {
-    const animations = Algorithm.bubbleSort(array.slice());
+    if (isRunning)
+        return ;
+    isRunning = true;
+    const animationObject = Algorithm.bubbleSort(array.slice())
+    const animations = animationObject.animations;
     const len = animations.length;
     const arrayBars = document.getElementsByClassName('array-bar');
 
@@ -60,14 +65,19 @@ const bubbleSort = (array, setArray) => {
             secondBarStyle.backgroundColor = '#FBBC05';
         }, (i + 0.6) * 10);
     }
+    setTimeout(() => {
+        isRunning = false;
+        setArray(animationObject.sortedArray);
+    }, len * 10);
 }
 
-const randomArray = () => {
-    const array = [];
-    for (let i = 0; i < 100; i++) {
-        array.push(randomIntFromInterval(5, 1000));
-    }
-    return array;
+const randomArray = (array) => {
+    if (isRunning)
+        return array;
+    const newArray = [];
+    for (let i = 0; i < 100; i++)
+        newArray.push(randomIntFromInterval(5, 1000));
+    return newArray;
 }
 
 const randomIntFromInterval = (min, max) => {

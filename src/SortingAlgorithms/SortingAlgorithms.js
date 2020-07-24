@@ -1,7 +1,7 @@
 /*
  * Desc: Simple bubble sort algorithm
  * Param: the array to sort
- * Return: an array of animations to play
+ * Return: an object which contains an array of animations to play and the sorted array
  */
 export const bubbleSort = array => {
     const len = array.length;
@@ -19,5 +19,5 @@ export const bubbleSort = array => {
         }
     }
 
-    return animations;
+    return {animations: animations, sortedArray: array};
 }
