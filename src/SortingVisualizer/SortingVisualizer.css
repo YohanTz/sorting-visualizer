@@ -5,6 +5,21 @@
     justify-content: space-around;
 }
 
+.header > div {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.header > div:hover {
+    color: #FBBC05;
+}
+
 .array-bar-container {
     width: 85%;
     margin: 0 auto;
@@ -17,6 +32,10 @@
 
 .main-container > div, .array-bar-container > div {
     width: 100%;
+}
+
+.infos-container {
+    width: 85%;
 }
 
 .array-bar {

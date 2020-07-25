@@ -12,10 +12,10 @@ export const bubbleSort = array => {
                 let tmp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = tmp;
-                animations.push({comparison: [j, j + 1], swap: true});
+                animations.push({comparison: [j, j + 1], swap: true, arrayAccesses: 6});
             }
             else
-                animations.push({comparison: [j, j + 1], swap: false});
+                animations.push({comparison: [j, j + 1], swap: false, arrayAccesses: 2});
         }
     }
 
