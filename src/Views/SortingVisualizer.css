@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header > div {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition-property: color;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.header > div:hover {
+  color: #fbbc05;
+}
+
+.array-bar-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.main-container,
+.array-bar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-container > div,
+.array-bar-container > div {
+  width: 100%;
+}
+
+.infos-container {
+  width: 85%;
+}
+
+.array-bar {
+  background-color: #fbbc05;
+  display: inline-block;
+  margin: 0 1px;
+}

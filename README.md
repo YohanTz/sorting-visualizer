@@ -6,5 +6,9 @@ sorting algorithms in action and I wanted to implement mine!
 
 ## Algoritms implemented
 
+[x] Bubble Sort
+[ ] Merge Sort
+[ ] Quick Sort
+[ ] Insert Sort
 
 You can access it here: https://yohantz.github.io/Sorting-Visualizer/
