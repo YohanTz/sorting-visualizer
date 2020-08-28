@@ -7,8 +7,7 @@ const DELAY = 3;
 const DEFAULT_ARRAY_SIZE = 100;
 
 const SortingVisualizer = () => {
-  const [arraySize, setArraySize] = useState(DEFAULT_ARRAY_SIZE);
-  const [array, setArray] = useState(randomArray([], arraySize));
+  const [array, setArray] = useState(randomArray([], DEFAULT_ARRAY_SIZE));
   const [comparisons, setComparisons] = useState(0);
   const [arrayAccesses, setArrayAccesses] = useState(0);
 
@@ -16,7 +15,7 @@ const SortingVisualizer = () => {
     return (
       <header className='header'>
         <h1>Sorting Visualizer</h1>
-        <div onClick={() => setArray(randomArray(array, arraySize))}>
+        <div onClick={() => setArray(randomArray(array, DEFAULT_ARRAY_SIZE))}>
           <h3>Generate new array</h3>
         </div>
         <div
@@ -124,7 +123,6 @@ const playMergeSort = (array, setArray, setComparisons, setArrayAccesses) => {
   for (let i = 0; i < len; i++, j++) {
     let firstBarStyle = arrayBars[animations[i].comparison[0]].style;
     let secondBarStyle = arrayBars[animations[i].comparison[1]].style;
-    console.log('tyest');
 
     setTimeout(() => {
       firstBarStyle.backgroundColor = '#34A853';
